@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import mentors from "./modules/mentors";
 
 Vue.use(Vuex);
 
@@ -45,5 +46,7 @@ export default new Vuex.Store({
   state: {},
   mutations: {},
   actions: {},
-  modules: {},
+  modules: {
+    mentors,
+  },
 });
