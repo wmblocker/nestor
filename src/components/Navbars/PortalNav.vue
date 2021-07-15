@@ -17,14 +17,19 @@
           <BIcon icon="chat-right-quote" scale="1.5" alt="Messages"></BIcon>
         </router-link>
       </BNavbarNav>
+      <BNavbarNav right>
+        <BNavItem>{{ getCurrentUser.name }}</BNavItem>
+      </BNavbarNav>
     </BCollapse>
   </BNavbar>
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 import {
   BIcon,
   BNavbar,
+  BNavItem,
   BNavbarBrand,
   BNavbarToggle,
   BCollapse,
@@ -33,6 +38,9 @@ import {
 
 export default {
   name: "PortalNav",
+  computed: {
+    ...mapGetters("User", ["getCurrentUser"]),
+  },
   components: {
     BIcon,
     BNavbar,
@@ -40,6 +48,7 @@ export default {
     BNavbarToggle,
     BCollapse,
     BNavbarNav,
+    BNavItem,
   },
 };
 </script>

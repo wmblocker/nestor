@@ -11,7 +11,7 @@ import RecommendedMentorsCardGroup from "../../components/CardGroups/Recommended
 import MentorsFollowingCardGroup from "../../components/CardGroups/MentorsFollowingCardGroup";
 export default {
   name: "Mentors",
-  components: {MentorsFollowingCardGroup, RecommendedMentorsCardGroup},
+  components: { MentorsFollowingCardGroup, RecommendedMentorsCardGroup },
 };
 </script>
 

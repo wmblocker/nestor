@@ -1,19 +1,20 @@
 <template>
-    <BModal id="loginWithEmail" title="Login With Email" hide-footer>
-    </BModal>
+  <BModal id="loginWithEmailModal" title="Login With Email" hide-footer>
+    <LoginWithEmailForm></LoginWithEmailForm>
+  </BModal>
 </template>
 
 <script>
-import { BModal } from 'bootstrap-vue';
+import { BModal } from "bootstrap-vue";
+import LoginWithEmailForm from "../Forms/LoginWithEmailForm";
 
 export default {
-    name: "LoginWithEmail",
-    components: {
-        BModal
-    }
-}
+  name: "LoginWithEmail",
+  components: {
+    LoginWithEmailForm,
+    BModal,
+  },
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

@@ -12,7 +12,9 @@
         <LinkedInAuth></LinkedInAuth>
       </BCol>
       <BCol cols="12">
-        <router-link to="/portal">Use email</router-link>
+        <BButton variant="link" v-b-modal="'loginWithEmailModal'"
+          >Use email</BButton
+        >
       </BCol>
     </BRow>
   </div>
