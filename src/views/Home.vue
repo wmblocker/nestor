@@ -4,7 +4,7 @@
       <img
         class="brand-logo w-75 mx-auto"
         alt="Vue logo"
-        src="../assets/logo.png"
+        src="../assets/logo-transparent.png"
       />
     </BRow>
     <BRow class="row text-center">
@@ -31,7 +31,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  img {
-    max-width: 600px;
-  }
+img {
+  max-width: 600px;
+}
 </style>

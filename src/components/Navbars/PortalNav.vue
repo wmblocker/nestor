@@ -7,7 +7,7 @@
 
     <BCollapse id="portal-nav-collapse" is-nav>
       <BNavbarNav class="mx-auto">
-        <router-link :to="{name: 'portalHome'}" class="mx-lg-5 nav-link">
+        <router-link :to="{ name: 'portalHome' }" class="mx-lg-5 nav-link">
           <BIcon icon="house-door" scale="1.5" alt="Home"></BIcon>
         </router-link>
         <router-link to="/portal/connections" class="mx-lg-5 nav-link">

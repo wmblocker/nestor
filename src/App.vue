@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app container-fluid">
     <div id="nav"></div>
     <router-view />
   </div>
@@ -12,7 +12,10 @@ export default {
 </script>
 
 <style>
+  #app {
+    min-height: 100vh;
+  }
   body {
-    background: #ECEFF1;
+    background: #eceff1;
   }
 </style>

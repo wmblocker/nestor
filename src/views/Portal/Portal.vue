@@ -1,13 +1,14 @@
 <template>
   <BRow>
     <PortalNav></PortalNav>
-
-    <BCol cols="3">
-      <PortalSideNav></PortalSideNav>
-    </BCol>
-    <BCol cols="9">
-      <router-view></router-view>
-    </BCol>
+    <BRow>
+      <BCol cols="3" align-self="stretch">
+        <PortalSideNav></PortalSideNav>
+      </BCol>
+      <BCol cols="9" align-self="stretch">
+        <router-view></router-view>
+      </BCol>
+    </BRow>
   </BRow>
 </template>
 
@@ -22,7 +23,8 @@ export default {
     PortalSideNav,
     PortalNav,
     BCol,
-    BRow},
+    BRow,
+  },
 };
 </script>
 

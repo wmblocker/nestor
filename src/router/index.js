@@ -31,32 +31,54 @@ const routes = [
       {
         path: "",
         name: "portalHome",
-        component: () => import(/* webpackChunkName: "portalHome" */ "../views/Portal/PortalHome.vue"),
+        component: () =>
+          import(
+            /* webpackChunkName: "portalHome" */ "../views/Portal/PortalHome.vue"
+          ),
       },
       {
         path: "connections",
         name: "connections",
-        component: () => import(/* webpackChunkName: "connections" */ "../views/Portal/Connections.vue"),
+        component: () =>
+          import(
+            /* webpackChunkName: "connections" */ "../views/Portal/Connections.vue"
+          ),
       },
       {
         path: "messages",
         name: "messages",
-        component: () => import(/* webpackChunkName: "messages" */ "../views/Portal/Messages.vue"),
+        component: () =>
+          import(
+            /* webpackChunkName: "messages" */ "../views/Portal/Messages.vue"
+          ),
       },
       {
         path: "profile",
         name: "profile",
-        component: () => import(/* webpackChunkName: "profile" */ "../views/Portal/Profile.vue"),
+        component: () =>
+          import(
+            /* webpackChunkName: "profile" */ "../views/Portal/Profile.vue"
+          ),
       },
       {
         path: "rooms",
         name: "rooms",
-        component: () => import(/* webpackChunkName: "rooms" */ "../views/Portal/Rooms.vue"),
+        component: () =>
+          import(/* webpackChunkName: "rooms" */ "../views/Portal/Rooms.vue"),
+      },
+      {
+        path: "rooms/:roomId",
+        name: "rooms",
+        component: () =>
+          import(/* webpackChunkName: "rooms" */ "../views/Portal/Rooms.vue"),
       },
       {
         path: "mentors",
         name: "mentors",
-        component: () => import(/* webpackChunkName: "mentors" */ "../views/Portal/Mentors.vue"),
+        component: () =>
+          import(
+            /* webpackChunkName: "mentors" */ "../views/Portal/Mentors.vue"
+          ),
       },
     ],
   },

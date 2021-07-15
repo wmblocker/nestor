@@ -1,13 +1,11 @@
 <template>
-    <h2>Portal Home</h2>
+  <h2>Portal Home</h2>
 </template>
 
 <script>
 export default {
-    name: "PortalHome"
-}
+  name: "PortalHome",
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
