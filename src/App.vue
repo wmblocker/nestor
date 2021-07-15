@@ -12,10 +12,10 @@ export default {
 </script>
 
 <style>
-  #app {
-    min-height: 100vh;
-  }
-  body {
-    background: #eceff1;
-  }
+#app {
+  min-height: 100vh;
+}
+body {
+  background: #eceff1;
+}
 </style>

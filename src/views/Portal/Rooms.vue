@@ -1,16 +1,16 @@
 <template>
   <div>
-      <div v-if="$route.params.roomId">
-          <h2>Room: </h2>
-          <JitsiIframe></JitsiIframe>
-      </div>
-      <div v-else>
-          <h2>Rooms</h2>
-          <UserCreatedRoomsCardGroup class="mt-5">Your Rooms</UserCreatedRoomsCardGroup>
-          <MentorCreatedRoomsCardGroup class="mt-5"></MentorCreatedRoomsCardGroup>
-      </div>
-
-
+    <div v-if="$route.params.roomId">
+      <h2>Room:</h2>
+      <JitsiIframe></JitsiIframe>
+    </div>
+    <div v-else>
+      <h2>Rooms</h2>
+      <UserCreatedRoomsCardGroup class="mt-5"
+        >Your Rooms</UserCreatedRoomsCardGroup
+      >
+      <MentorCreatedRoomsCardGroup class="mt-5"></MentorCreatedRoomsCardGroup>
+    </div>
   </div>
 </template>
 
@@ -22,8 +22,8 @@ import MentorCreatedRoomsCardGroup from "../../components/CardGroups/MentorCreat
 export default {
   name: "Rooms",
   components: {
-      MentorCreatedRoomsCardGroup,
-      UserCreatedRoomsCardGroup,
+    MentorCreatedRoomsCardGroup,
+    UserCreatedRoomsCardGroup,
     JitsiIframe,
   },
 };
