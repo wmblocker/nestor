@@ -17,8 +17,6 @@
     </BRow>
   </div>
 </template>
-
-<style scoped lang="scss"></style>
 <script>
 import { BRow, BCol } from "bootstrap-vue";
 
@@ -31,3 +29,9 @@ export default {
   },
 };
 </script>
+
+<style scoped lang="scss">
+  img {
+    max-width: 600px;
+  }
+</style>
