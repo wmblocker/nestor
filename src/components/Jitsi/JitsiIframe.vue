@@ -21,7 +21,7 @@ export default {
 </script>
 
 <style scoped>
-    #jitsi-iframe {
-        height: 600px;
-    }
+#jitsi-iframe {
+  height: 600px;
+}
 </style>
