@@ -1,6 +1,9 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import Rooms from "./modules/rooms"
+import Rooms from "./modules/rooms";
+import User from "./modules/user";
+import Mentors from "./modules/mentors";
+import Mentees from "./modules/mentees";
 Vue.use(Vuex);
 
 let app = null;
@@ -42,10 +45,15 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 export default new Vuex.Store({
-  state: {},
+  state: {
+    appID: "vpaas-magic-cookie-b34307fd6806488fa62b1f3631405801",
+  },
   mutations: {},
   actions: {},
   modules: {
-    Rooms
+    Rooms,
+    User,
+    Mentees,
+    Mentors,
   },
 });
