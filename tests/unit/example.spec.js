@@ -11,5 +11,5 @@ test("App should render default route", () => {
     localVue,
     router,
   });
-  expect(wrapper.text()).toMatch(`Welcome to Your Vue.js App`);
+  expect(wrapper.text()).toMatch(`Use email`);
 });
