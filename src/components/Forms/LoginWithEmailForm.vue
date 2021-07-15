@@ -3,29 +3,30 @@
     <BForm @submit="onSubmit">
       <BFormGroup
         id="input-group-1"
-        label="Name"
+        label="Email"
         label-for="input-1"
-        description="Please enter a name for the new room."
+        description="Please enter an email address"
       >
         <BFormInput
           id="input-1"
-          v-model="form.name"
-          placeholder="ex. John's Room"
+          v-model="form.email"
+          placeholder="ex. john@domain.com"
+          type="email"
           required
         ></BFormInput>
       </BFormGroup>
 
       <BFormGroup
         id="input-group-2"
-        label="Description"
+        label="Password"
         label-for="input-2"
-        description="Please enter a name for the new room."
+        description="Please enter a password"
       >
         <BFormInput
           id="input-2"
-          v-model="form.description"
-          placeholder="ex. How To Be Productive Working From Home"
-          max="88"
+          v-model="form.password"
+          max="22"
+          type="password"
           required
         ></BFormInput>
       </BFormGroup>
@@ -39,19 +40,25 @@ import { BForm, BFormInput, BFormGroup, BButton } from "bootstrap-vue";
 import { mapActions } from "vuex";
 
 export default {
-  name: "CreateRoomForm",
+  name: "LoginWithEmailForm",
   data() {
     return {
       form: {
-        name: "",
+        email: "",
+        password: "",
       },
     };
   },
   methods: {
-    ...mapActions("Rooms", ["createRoom"]),
+    ...mapActions("User", ["loginUser"]),
     onSubmit(event) {
       event.preventDefault();
-      this.createRoom(this.form);
+      const userId = this.form.email.substring(0, this.form.email.indexOf("@"));
+      this.loginUser(userId);
+      this.$bvModal.hide("loginWithEmailModal");
+      this.$router.replace({
+        name: "portal",
+      });
     },
   },
   components: {

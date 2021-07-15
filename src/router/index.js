@@ -24,7 +24,7 @@ const routes = [
   },
   {
     path: "/portal",
-    name: "Portal",
+    name: "portal",
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/Portal/Portal.vue"),
     children: [
@@ -67,10 +67,12 @@ const routes = [
           import(/* webpackChunkName: "rooms" */ "../views/Portal/Rooms.vue"),
       },
       {
-        path: "rooms/:roomId",
-        name: "rooms",
+        path: "room/:roomID",
+        name: "room",
         component: () =>
-          import(/* webpackChunkName: "rooms" */ "../views/Portal/Rooms.vue"),
+          import(
+            /* webpackChunkName: "rooms" */ "../views/Portal/JitsiRoom.vue"
+          ),
       },
       {
         path: "mentors",

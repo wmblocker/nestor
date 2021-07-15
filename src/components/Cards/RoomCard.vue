@@ -10,19 +10,22 @@
           ></BCardImg>
         </BCol>
         <BCol md="6">
-          <BCardBody title="Horizontal Card">
-            <BCardText> Default Content </BCardText>
+          <BCardBody :title="room.description">
+            <BCardText>By {{ getUser(mentorID).name }}</BCardText>
           </BCardBody>
         </BCol>
       </BRow>
       <template #footer>
-        <router-link to="rooms/jitsi" class="float-end">Enter Room</router-link>
+        <router-link :to="getJitsiRoomUrl" class="float-end">
+          <slot>Enter Room</slot>
+        </router-link>
       </template>
     </BCard>
   </div>
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 import {
   BCard,
   BCol,
@@ -34,6 +37,29 @@ import {
 
 export default {
   name: "RoomCard",
+  props: {
+    mentorID: {
+      type: String,
+      required: true,
+    },
+    roomID: {
+      type: String,
+      required: true,
+    },
+    room: {
+      type: Object,
+      required: true,
+    },
+    mentor: {
+      required: true,
+    },
+  },
+  computed: {
+    ...mapGetters("User", ["getUser"]),
+    getJitsiRoomUrl() {
+      return `room/${this.roomID}`;
+    },
+  },
   components: {
     BCard,
     BCol,

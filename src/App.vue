@@ -1,13 +1,15 @@
 <template>
   <div id="app container-fluid">
-    <div id="nav"></div>
     <router-view />
+    <LoginWithEmailModal></LoginWithEmailModal>
   </div>
 </template>
 
 <script>
+import LoginWithEmailModal from "./components/Modals/LoginWithEmailModal";
 export default {
   name: "App",
+  components: { LoginWithEmailModal },
 };
 </script>
 
