@@ -1,6 +1,33 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <h1>Welcome to Your Vue.js App</h1>
+    <BRow>
+      <img
+        class="brand-logo w-75 mx-auto"
+        alt="Vue logo"
+        src="../assets/logo.png"
+      />
+    </BRow>
+    <BRow class="row text-center">
+      <BCol cols="12">
+        <LinkedInAuth></LinkedInAuth>
+      </BCol>
+      <BCol cols="12">
+        <router-link to="/portal">Use email</router-link>
+      </BCol>
+    </BRow>
   </div>
 </template>
+
+<style scoped lang="scss"></style>
+<script>
+import { BRow, BCol } from "bootstrap-vue";
+
+import LinkedInAuth from "../components/Buttons/LinkedInAuth";
+export default {
+  components: {
+    BCol,
+    BRow,
+    LinkedInAuth,
+  },
+};
+</script>

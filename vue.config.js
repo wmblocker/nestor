@@ -1,5 +1,5 @@
 module.exports = {
-    devServer: {
-        writeToDisk: true
-    }
-}
+  devServer: {
+    writeToDisk: true,
+  },
+};

@@ -6,7 +6,7 @@ Vue.use(Vuex);
 let app = null;
 let features = null;
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function () {
   // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
   // // The Firebase SDK is initialized and available here!
   //
@@ -25,17 +25,17 @@ document.addEventListener('DOMContentLoaded', function() {
   try {
     app = firebase.app(); // eslint-disable-line
     features = [
-      'auth',
-      'database',
-      'firestore',
-      'functions',
-      'messaging',
-      'storage',
-      'analytics',
-      'remoteConfig',
-      'performance',
-    ].filter(feature => typeof app[feature] === 'function');
-    console.info('Firebase successfully loaded', features);
+      "auth",
+      "database",
+      "firestore",
+      "functions",
+      "messaging",
+      "storage",
+      "analytics",
+      "remoteConfig",
+      "performance",
+    ].filter((feature) => typeof app[feature] === "function");
+    console.info("Firebase successfully loaded", features);
   } catch (e) {
     console.error(e);
   }

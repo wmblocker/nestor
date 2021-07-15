@@ -4,6 +4,9 @@ import Home from "../views/Home.vue";
 
 Vue.use(VueRouter);
 
+// route level code-splitting
+// this generates a separate chunk for routes
+// which is lazy-loaded when the route is visited.
 const routes = [
   {
     path: "/",
@@ -18,6 +21,44 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue"),
+  },
+  {
+    path: "/portal",
+    name: "Portal",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/Portal/Portal.vue"),
+    children: [
+      {
+        path: "",
+        name: "portalHome",
+        component: () => import(/* webpackChunkName: "portalHome" */ "../views/Portal/PortalHome.vue"),
+      },
+      {
+        path: "connections",
+        name: "connections",
+        component: () => import(/* webpackChunkName: "connections" */ "../views/Portal/Connections.vue"),
+      },
+      {
+        path: "messages",
+        name: "messages",
+        component: () => import(/* webpackChunkName: "messages" */ "../views/Portal/Messages.vue"),
+      },
+      {
+        path: "profile",
+        name: "profile",
+        component: () => import(/* webpackChunkName: "profile" */ "../views/Portal/Profile.vue"),
+      },
+      {
+        path: "rooms",
+        name: "rooms",
+        component: () => import(/* webpackChunkName: "rooms" */ "../views/Portal/Rooms.vue"),
+      },
+      {
+        path: "mentors",
+        name: "mentors",
+        component: () => import(/* webpackChunkName: "mentors" */ "../views/Portal/Mentors.vue"),
+      },
+    ],
   },
 ];
 
