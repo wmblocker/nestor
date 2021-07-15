@@ -20,7 +20,7 @@
 <script>
 import { BRow, BCol } from "bootstrap-vue";
 
-import LinkedInAuth from "../components/Buttons/LinkedInAuth";
+import LinkedInAuth from "../components/Buttons/LinkedInAuthButton";
 export default {
   components: {
     BCol,
