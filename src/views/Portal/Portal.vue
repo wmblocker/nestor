@@ -9,6 +9,7 @@
         <router-view></router-view>
       </BCol>
     </BRow>
+    <CreateRoomModal></CreateRoomModal>
   </BRow>
 </template>
 
@@ -16,10 +17,12 @@
 import PortalNav from "../../components/Navbars/PortalNav";
 import PortalSideNav from "../../components/Navbars/PortalSideNav";
 import { BRow, BCol } from "bootstrap-vue";
+import CreateRoomModal from "../../components/Modals/CreateRoomModal";
 
 export default {
   name: "Portal",
   components: {
+    CreateRoomModal,
     PortalSideNav,
     PortalNav,
     BCol,

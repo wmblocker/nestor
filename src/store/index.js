@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
-
+import Rooms from "./modules/rooms"
 Vue.use(Vuex);
 
 let app = null;
@@ -45,5 +45,7 @@ export default new Vuex.Store({
   state: {},
   mutations: {},
   actions: {},
-  modules: {},
+  modules: {
+    Rooms
+  },
 });
