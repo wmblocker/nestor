@@ -16,7 +16,7 @@ export default {
     this.updateMentors();
     this.updateMentees();
 
-    if(this.getCurrentUser) {
+    if(this.getCurrentUser && this.$route.name !== 'home') {
       this.$router.push({
         name: 'home'
       })
