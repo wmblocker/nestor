@@ -3,13 +3,10 @@
     <slot>Mentors You Are Following</slot>
     <BRow>
       <BCol cols="4">
-        <UserCard></UserCard>
       </BCol>
       <BCol cols="4">
-        <UserCard></UserCard>
       </BCol>
       <BCol cols="4">
-        <UserCard></UserCard>
       </BCol>
     </BRow>
   </div>
@@ -22,7 +19,6 @@ import { BRow, BCol } from "bootstrap-vue";
 export default {
   name: "MentorsFollowingCardGroup",
   components: {
-    UserCard,
     BCol,
     BRow,
   },

@@ -66,6 +66,19 @@
         ></BFormInput>
       </BFormGroup>
 
+      <BFormGroup
+              id="input-group-11"
+              label="Avatar Url"
+              label-for="input-11"
+      >
+        <BFormInput
+                id="input-11"
+                v-model="form.avatar"
+                :placeholder="getCurrentUser.avatar"
+                required
+        ></BFormInput>
+      </BFormGroup>
+
       <BFormGroup id="input-group-7" label="About" label-for="input-7">
         <b-form-textarea
           id="textarea"

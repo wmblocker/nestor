@@ -1,11 +1,11 @@
 <template>
   <BCard
-    title="Title"
-    img-src="https://picsum.photos/300/300/?image=41"
-    img-alt="Image"
+    :title="user.name"
+    :img-src="getUserAvatar"
+    img-alt="Avatar"
     img-top
   >
-    <BCardText> Content </BCardText>
+    <BCardText> {{user.jobTitle}} </BCardText>
     <template #footer>
       <slot><small class="text-muted">Last online 3 mins ago</small></slot>
     </template>
@@ -17,6 +17,29 @@ import { BCardText, BCard } from "bootstrap-vue";
 
 export default {
   name: "UserCard",
+  props: {
+    userId: {
+      type: String,
+      required: true
+    }
+  },
+  computed: {
+    getUserAvatar() {
+      return this.user.avatar || 'https://picsum.photos/300/300/?image=41'
+    }
+  },
+  data() {
+    return {
+      user: {},
+    };
+  },
+  mounted() {
+    const ref = firebase.database().ref("users"); // eslint-disable-line
+    const _self = this;
+    ref.child(this.userId).get().then((snapshot) => {
+        _self.user = snapshot.val();
+      });
+  },
   components: {
     BCard,
     BCardText,

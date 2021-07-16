@@ -14,16 +14,11 @@
       <BCol md="12">
         <div class="text-center">
           <b-card-img
-            src="https://placekitten.com/300/300"
-            class="d-block d-lg-none mx-auto my-3"
+            :src="getUserAvatar"
+            class="d-block d-lg-none mx-auto my-3 card-img-left"
           ></b-card-img>
         </div>
-        <b-card img-alt="Card image" img-left class="mb-3 p-3">
-          <b-card-img
-            src="https://placekitten.com/300/300"
-            alt="Card image"
-            class="card-img-left d-none d-lg-block"
-          ></b-card-img>
+        <b-card img-alt="Card image" :img-src="getUserAvatar" img-left class="mb-3 p-3">
           <b-card-text>
             {{ getCurrentUser.name }} ({{ getCurrentUser.displayName }})
           </b-card-text>
@@ -122,6 +117,9 @@ export default {
     ...mapGetters("User", ["getCurrentUser"]),
     ...mapGetters("Mentors", ["getMentors"]),
     ...mapGetters("Rooms", ["getRoomsByMentorId"]),
+    getUserAvatar() {
+      return this.getCurrentUser.avatar || 'https://picsum.photos/300/300/?image=41'
+    }
   },
   components: {
     EditProfileButton,
@@ -130,8 +128,13 @@ export default {
 </script>
 
 <style scoped lang="scss">
-img {
-  max-width: 200px;
-  border-radius: 50% !important;
-}
+  @media screen and (max-width: 991px) {
+    img {
+      display: none;
+    }
+  }
+  img {
+    max-width: 200px;
+    border-radius: 50% !important;
+  }
 </style>

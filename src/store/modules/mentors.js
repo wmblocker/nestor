@@ -40,6 +40,7 @@ const actions = {
 
         if(!state.mentors[userId]) {
             firebase.database().ref('mentors/' + userId).set({
+                mentorId: userId,
                 rating: 0,
                 created: timestamp,
                 updated: timestamp

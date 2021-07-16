@@ -11,7 +11,7 @@
       <UserCreatedRoomsCardGroup class="mt-5" v-if="getCurrentUser.mentor"
         >Your Rooms</UserCreatedRoomsCardGroup
       >
-      <UserSubscribedRooms></UserSubscribedRooms>
+      <UserSubscribedRooms class="mt-5"></UserSubscribedRooms>
       <MentorCreatedRoomsCardGroup class="mt-5"></MentorCreatedRoomsCardGroup>
     </div>
   </div>
