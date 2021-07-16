@@ -53,8 +53,7 @@ export default {
     ...mapActions("User", ["loginUser"]),
     onSubmit(event) {
       event.preventDefault();
-      const userId = this.form.email.substring(0, this.form.email.indexOf("@"));
-      this.loginUser(userId);
+      this.loginUser(this.form);
       this.$bvModal.hide("loginWithEmailModal");
       this.$router.replace({
         name: "portal",
