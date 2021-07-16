@@ -1,7 +1,7 @@
 <template>
   <BRow>
     <PortalNav></PortalNav>
-    <BRow class="mt-5">
+    <BRow class="mt-5 mx-auto">
       <BCol md="3" align-self="stretch">
         <PortalSideNav></PortalSideNav>
       </BCol>

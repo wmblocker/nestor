@@ -1,5 +1,5 @@
 <template>
-  <div class="px-2">
+  <div class="px-2 d-none d-md-block">
     <BNav vertical>
       <router-link to="/portal/profile" class="nav-link">
         <span
