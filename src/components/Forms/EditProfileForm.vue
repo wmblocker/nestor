@@ -66,16 +66,12 @@
         ></BFormInput>
       </BFormGroup>
 
-      <BFormGroup
-              id="input-group-11"
-              label="Avatar Url"
-              label-for="input-11"
-      >
+      <BFormGroup id="input-group-11" label="Avatar Url" label-for="input-11">
         <BFormInput
-                id="input-11"
-                v-model="form.avatar"
-                :placeholder="getCurrentUser.avatar"
-                required
+          id="input-11"
+          v-model="form.avatar"
+          :placeholder="getCurrentUser.avatar"
+          required
         ></BFormInput>
       </BFormGroup>
 

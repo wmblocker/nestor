@@ -3,14 +3,11 @@
     <slot>Rooms You are Subscribed To</slot>
     <BRow>
       <template v-for="(room, roomId) in getMenteeRoomsById(getCurrentUser.id)">
-        <BCol
-                cols="6"
-                :key="roomId"
-        >
+        <BCol cols="6" :key="roomId">
           <RoomCard
-                  :room="getRoomById(roomId, room.mentorId)"
-                  :mentorID="room.mentorId"
-                  :roomID="roomId"
+            :room="getRoomById(roomId, room.mentorId)"
+            :mentorID="room.mentorId"
+            :roomID="roomId"
           ></RoomCard>
         </BCol>
       </template>

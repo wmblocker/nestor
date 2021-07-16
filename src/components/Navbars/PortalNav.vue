@@ -45,9 +45,9 @@
         </router-link>
       </BNavbarNav>
       <BNavbarNav right>
-          <router-link to="/" class="mx-lg-5 nav-link">
-              <span>Logout</span>
-          </router-link>
+        <router-link to="/" class="mx-lg-5 nav-link">
+          <span>Logout</span>
+        </router-link>
       </BNavbarNav>
     </BCollapse>
   </BNavbar>

@@ -1,11 +1,6 @@
 <template>
-  <BCard
-    :title="user.name"
-    :img-src="getUserAvatar"
-    img-alt="Avatar"
-    img-top
-  >
-    <BCardText> {{user.jobTitle}} </BCardText>
+  <BCard :title="user.name" :img-src="getUserAvatar" img-alt="Avatar" img-top>
+    <BCardText> {{ user.jobTitle }} </BCardText>
     <template #footer>
       <slot><small class="text-muted">Last online 3 mins ago</small></slot>
     </template>
@@ -20,13 +15,13 @@ export default {
   props: {
     userId: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
   computed: {
     getUserAvatar() {
-      return this.user.avatar || 'https://picsum.photos/300/300/?image=41'
-    }
+      return this.user.avatar || "https://picsum.photos/300/300/?image=41";
+    },
   },
   data() {
     return {
@@ -36,7 +31,10 @@ export default {
   mounted() {
     const ref = firebase.database().ref("users"); // eslint-disable-line
     const _self = this;
-    ref.child(this.userId).get().then((snapshot) => {
+    ref
+      .child(this.userId)
+      .get()
+      .then((snapshot) => {
         _self.user = snapshot.val();
       });
   },

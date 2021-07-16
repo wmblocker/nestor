@@ -14,12 +14,12 @@
 <script>
 import { BRow, BCol } from "bootstrap-vue";
 import UserCard from "../Cards/UserCard";
-import { mapGetters } from 'vuex';
+import { mapGetters } from "vuex";
 export default {
   name: "RecommendedMentorsCardGroup",
   computed: {
-    ...mapGetters('Mentors', ['getMentors']),
-    ...mapGetters('User', ['getCurrentUser'])
+    ...mapGetters("Mentors", ["getMentors"]),
+    ...mapGetters("User", ["getCurrentUser"]),
   },
   components: {
     UserCard,

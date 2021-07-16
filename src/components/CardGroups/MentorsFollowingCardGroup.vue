@@ -2,18 +2,14 @@
   <div class="mentors-following">
     <slot>Mentors You Are Following</slot>
     <BRow>
-      <BCol cols="4">
-      </BCol>
-      <BCol cols="4">
-      </BCol>
-      <BCol cols="4">
-      </BCol>
+      <BCol cols="4"> </BCol>
+      <BCol cols="4"> </BCol>
+      <BCol cols="4"> </BCol>
     </BRow>
   </div>
 </template>
 
 <script>
-import UserCard from "../Cards/UserCard";
 import { BRow, BCol } from "bootstrap-vue";
 
 export default {
