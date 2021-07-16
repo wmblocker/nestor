@@ -20,18 +20,20 @@ const actions = {
      */
     createRoom({commit, state, dispatch, rootState, rootActions}, form) {
         const { id } = rootState.User.user;
-        const roomID = `${id}-${form.name}`;
+        const formattedFormName = form.name.replace(/[^a-zA-Z]/g, '');
+        const roomID = `${id}-${formattedFormName}`;
         const timestamp = firebase.firestore.Timestamp.now();
         firebase.database().ref('rooms/' + id + '/' + roomID).set({
             name: form.name,
             description: form.description,
+            detailedDescription: form.detailedDescription,
             userId: id,
             open: true,
             participants: {},
             created: timestamp,
             updated: timestamp
         }).then(() => {
-            dispatch('mentors/createMentor').then(() => {
+            dispatch('Mentors/createMentor', id, {root: true}).then(() => {
                 dispatch('updateRooms')
             })
         });

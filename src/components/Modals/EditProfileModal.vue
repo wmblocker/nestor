@@ -1,17 +1,17 @@
 <template>
-  <BModal id="createRoomModal" title="New Room" hide-footer>
-    <CreateRoomForm></CreateRoomForm>
+  <BModal id="editProfileModal" title="Edit Profile" hide-footer>
+    <EditProfileForm></EditProfileForm>
   </BModal>
 </template>
 
 <script>
 import { BModal } from "bootstrap-vue";
-import CreateRoomForm from "../Forms/CreateRoomForm";
+import EditProfileForm from "../Forms/EditProfileForm";
 
 export default {
-  name: "CreateRoomModal",
+  name: "EditProfileModal",
   components: {
-    CreateRoomForm,
+    EditProfileForm,
     BModal,
   },
 };

@@ -18,7 +18,9 @@
         </router-link>
       </BNavbarNav>
       <BNavbarNav right>
-        <BNavItem>{{ getCurrentUser.name }}</BNavItem>
+        <BNavItem v-if="getCurrentUser.name">{{
+          getCurrentUser.name
+        }}</BNavItem>
       </BNavbarNav>
     </BCollapse>
   </BNavbar>

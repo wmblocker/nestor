@@ -9,7 +9,6 @@ const mutations = {
     setUser: (state, user) => state.user = user
 };
 const getters = {
-    getUser: (state) => (userID) => state.users[userID],
     getCurrentUser: (state) => state.user
 };
 const actions = {
@@ -42,6 +41,16 @@ const actions = {
             console.error('Login failed');
         }
     },
+    updateUser({commit, state, dispatch}, form){
+        const ref = firebase.database().ref("users/" + state.user.id );
+        ref.update({
+            ...form
+        }, (error) => {
+            if(!error) {
+                commit('setUser', form);
+            }
+        });
+    },
     createUser({dispatch}, {userId, email}) {
         firebase.database().ref('users/' + userId).set({
             id: userId,
@@ -49,7 +58,12 @@ const actions = {
             name: '',
             displayName: '',
             avatar: '',
-            interests: [],
+            interests: [
+                'Software Engineering',
+                'Networking',
+                'Product Design',
+                'User Experience'
+            ],
             jobTitle: '',
             experience: '',
             description: '',

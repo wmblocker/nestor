@@ -1,7 +1,7 @@
 <template>
   <div>
-    <BButton variant="success" v-b-modal="'createRoomModal'"
-      >Create Room</BButton
+    <BButton variant="success" v-b-modal="'editProfileModal'"
+      >Edit Profile</BButton
     >
   </div>
 </template>
@@ -9,7 +9,7 @@
 <script>
 import { BButton } from "bootstrap-vue";
 export default {
-  name: "CreateRoomButton",
+  name: "EditProfileButton",
   components: {
     BButton,
   },

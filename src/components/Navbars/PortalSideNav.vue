@@ -1,6 +1,6 @@
 <template>
   <div class="px-2">
-    <BNav vertical>
+    <BNav vertical="false">
       <router-link to="/portal/profile" class="nav-link">
         <span
           ><BIcon
