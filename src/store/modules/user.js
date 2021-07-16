@@ -20,13 +20,13 @@ const actions = {
         })
         return user;
     },
-    loginUser({commit, dispatch}, { email }) {
+    loginUser({commit, dispatch}, { email, mentor }) {
         const userId = email.substring(0, email.indexOf("@"));
         const ref = firebase.database().ref("users");
         ref.once("value")
             .then(function(snapshot) {
                 if(!snapshot.hasChild(userId)){
-                    dispatch('createUser', {userId, email}).then(() => {
+                    dispatch('createUser', {userId, email, mentor}).then(() => {
                         ref.child(userId).get().then((snapshot) => {
                             commit('setUser', snapshot.val());
                         })
@@ -59,13 +59,14 @@ const actions = {
             }
         });
     },
-    createUser({dispatch}, {userId, email}) {
+    createUser({dispatch}, {userId, email, mentor}) {
         firebase.database().ref('users/' + userId).set({
             id: userId,
             email: email,
             name: '',
             displayName: '',
             avatar: '',
+            mentor: mentor,
             interests: [
                 'Software Engineering',
                 'Networking',
@@ -77,7 +78,7 @@ const actions = {
             description: '',
             state: '',
             city: ''
-        }, () => {
+        }, (error) => {
             if(error) {
                 console.error(error);
             }
