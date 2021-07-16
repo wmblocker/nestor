@@ -73,7 +73,7 @@ const routes = [
         component: () =>
           import(
             /* webpackChunkName: "rooms" */ "../views/Portal/JitsiRoom.vue"
-          )
+          ),
       },
       {
         path: "mentors",
@@ -94,13 +94,13 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  if (!store.state.user && from.name !== 'home' ) {
+  if (!store.state.user && !(from.name == "home" || to.name == "home")) {
     const sessionUserId = sessionStorage.getItem("userId");
     if (sessionUserId) {
       store.dispatch("User/loginUserWithId", sessionUserId);
       next();
     } else {
-      next('/');
+      next("/");
     }
   } else {
     next();
