@@ -11,7 +11,7 @@
         </BCol>
         <BCol md="6">
           <BCardBody :title="room.description">
-            <BCardText>By {{ getUser(mentorID).name }}</BCardText>
+            <BCardText>By {{ getCurrentUser.name }}</BCardText>
           </BCardBody>
         </BCol>
       </BRow>
@@ -55,7 +55,7 @@ export default {
     },
   },
   computed: {
-    ...mapGetters("User", ["getUser"]),
+    ...mapGetters("User", ["getCurrentUser"]),
     getJitsiRoomUrl() {
       return `room/${this.roomID}`;
     },

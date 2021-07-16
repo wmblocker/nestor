@@ -2,14 +2,15 @@
   <BRow>
     <PortalNav></PortalNav>
     <BRow class="mt-5">
-      <BCol cols="3" align-self="stretch">
+      <BCol md="3" align-self="stretch">
         <PortalSideNav></PortalSideNav>
       </BCol>
-      <BCol cols="9" align-self="stretch">
+      <BCol md="9" align-self="stretch">
         <router-view></router-view>
       </BCol>
     </BRow>
     <CreateRoomModal></CreateRoomModal>
+    <EditProfileModal></EditProfileModal>
   </BRow>
 </template>
 
@@ -19,6 +20,7 @@ import PortalSideNav from "../../components/Navbars/PortalSideNav";
 import { BRow, BCol } from "bootstrap-vue";
 import CreateRoomModal from "../../components/Modals/CreateRoomModal";
 import { mapActions } from "vuex";
+import EditProfileModal from "../../components/Modals/EditProfileModal";
 
 export default {
   name: "Portal",
@@ -31,6 +33,7 @@ export default {
     ...mapActions("Mentors", ["updateMentors"]),
   },
   components: {
+    EditProfileModal,
     CreateRoomModal,
     PortalSideNav,
     PortalNav,
