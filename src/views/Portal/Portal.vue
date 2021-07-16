@@ -19,21 +19,10 @@ import PortalNav from "../../components/Navbars/PortalNav";
 import PortalSideNav from "../../components/Navbars/PortalSideNav";
 import { BRow, BCol } from "bootstrap-vue";
 import CreateRoomModal from "../../components/Modals/CreateRoomModal";
-import { mapActions } from "vuex";
 import EditProfileModal from "../../components/Modals/EditProfileModal";
 
 export default {
   name: "Portal",
-  mounted() {
-    this.updateRooms();
-    this.updateMentors();
-    this.updateMentees();
-  },
-  methods: {
-    ...mapActions("Rooms", ["updateRooms"]),
-    ...mapActions("Mentors", ["updateMentors"]),
-    ...mapActions("Mentees", ["updateMentees"]),
-  },
   components: {
     EditProfileModal,
     CreateRoomModal,
