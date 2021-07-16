@@ -56,7 +56,7 @@ export default {
       this.loginUser(this.form);
       this.$bvModal.hide("loginWithEmailModal");
       this.$router.replace({
-        name: "portal",
+        name: "rooms",
       });
     },
   },
