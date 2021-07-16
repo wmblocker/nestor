@@ -11,12 +11,12 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
-    name: "Home",
+    name: "home",
     component: Home,
   },
   {
     path: "/about",
-    name: "About",
+    name: "about",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
@@ -94,12 +94,16 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  if (!store.state.user) {
+  if (!store.state.user && to.name !== 'home') {
     const sessionUserId = sessionStorage.getItem("userId");
-    if (sessionUserId) store.dispatch("User/loginUserWithId", sessionUserId);
-    next();
+    if (sessionUserId) {
+      store.dispatch("User/loginUserWithId", sessionUserId);
+      next();
+    } else {
+      next('/');
+    }
   } else {
-    next('/');
+    next();
   }
 });
 
