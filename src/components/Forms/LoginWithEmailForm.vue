@@ -31,15 +31,15 @@
         ></BFormInput>
       </BFormGroup>
       <BFormGroup
-              id="input-group-3"
-              label="Are you a mentor?"
-              label-for="input-3"
+        id="input-group-3"
+        label="Are you a mentor?"
+        label-for="input-3"
       >
         <BFormCheckbox
-                id="input-3"
-                v-model="form.mentor"
-                type="checkbox"
-                required
+          id="input-3"
+          v-model="form.mentor"
+          type="checkbox"
+          required
         ></BFormCheckbox>
       </BFormGroup>
       <BButton type="submit" variant="primary">Submit</BButton>
@@ -48,7 +48,13 @@
 </template>
 
 <script>
-import { BForm, BFormInput, BFormGroup, BButton, BFormCheckbox } from "bootstrap-vue";
+import {
+  BForm,
+  BFormInput,
+  BFormGroup,
+  BButton,
+  BFormCheckbox,
+} from "bootstrap-vue";
 import { mapActions } from "vuex";
 
 export default {
@@ -58,7 +64,7 @@ export default {
       form: {
         email: "",
         password: "",
-        mentor: false
+        mentor: false,
       },
     };
   },
@@ -78,7 +84,7 @@ export default {
     BFormInput,
     BFormGroup,
     BButton,
-    BFormCheckbox
+    BFormCheckbox,
   },
 };
 </script>

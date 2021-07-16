@@ -8,15 +8,30 @@
     <BCollapse id="portal-nav-collapse" is-nav>
       <BNavbarNav class="mx-auto">
         <router-link :to="{ name: 'portalHome' }" class="mx-lg-5 nav-link">
-          <BIcon icon="house-door" scale="1.5" alt="Home" class="d-none d-lg-block"></BIcon>
+          <BIcon
+            icon="house-door"
+            scale="1.5"
+            alt="Home"
+            class="d-none d-lg-block"
+          ></BIcon>
           <span class="d-block d-md-none">Home</span>
         </router-link>
         <router-link to="/portal/connections" class="mx-lg-5 nav-link">
-          <BIcon icon="people" scale="1.5" alt="Connections" class="d-none d-lg-block"></BIcon>
+          <BIcon
+            icon="people"
+            scale="1.5"
+            alt="Connections"
+            class="d-none d-lg-block"
+          ></BIcon>
           <span class="d-block d-md-none">Connections</span>
         </router-link>
         <router-link to="/portal/messages" class="mx-lg-5 nav-link">
-          <BIcon icon="chat-right-quote" scale="1.5" alt="Messages" class="d-none d-lg-block"></BIcon>
+          <BIcon
+            icon="chat-right-quote"
+            scale="1.5"
+            alt="Messages"
+            class="d-none d-lg-block"
+          ></BIcon>
           <span class="d-block d-md-none">Messages</span>
         </router-link>
         <router-link to="/portal/rooms" class="mx-lg-5 nav-link">

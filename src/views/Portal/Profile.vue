@@ -13,14 +13,17 @@
     <BRow class="mt-3">
       <BCol md="12">
         <div class="text-center">
-          <b-card-img src="https://placekitten.com/300/300" class="d-block d-lg-none mx-auto my-3"></b-card-img>
+          <b-card-img
+            src="https://placekitten.com/300/300"
+            class="d-block d-lg-none mx-auto my-3"
+          ></b-card-img>
         </div>
-        <b-card
-          img-alt="Card image"
-          img-left
-          class="mb-3 p-3"
-        >
-          <b-card-img src="https://placekitten.com/300/300" alt="Card image" class="card-img-left d-none d-lg-block"></b-card-img>
+        <b-card img-alt="Card image" img-left class="mb-3 p-3">
+          <b-card-img
+            src="https://placekitten.com/300/300"
+            alt="Card image"
+            class="card-img-left d-none d-lg-block"
+          ></b-card-img>
           <b-card-text>
             {{ getCurrentUser.name }} ({{ getCurrentUser.displayName }})
           </b-card-text>

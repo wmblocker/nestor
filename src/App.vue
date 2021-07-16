@@ -16,14 +16,14 @@ export default {
     this.updateMentors();
     this.updateMentees();
 
-    if(this.getCurrentUser && this.$route.name !== 'home') {
+    if (this.getCurrentUser && this.$route.name !== "home") {
       this.$router.push({
-        name: 'home'
-      })
+        name: "home",
+      });
     }
   },
   computed: {
-    ...mapGetters('User', ['getCurrentUser']),
+    ...mapGetters("User", ["getCurrentUser"]),
   },
   methods: {
     ...mapActions("Rooms", ["updateRooms"]),
