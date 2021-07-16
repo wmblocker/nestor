@@ -1,5 +1,9 @@
 <template>
-  <BModal id="rateYourExperienceModal" :title="'Rate your experience with ' + mentor.name" hide-footer>
+  <BModal
+    id="rateYourExperienceModal"
+    :title="'Rate your experience with ' + mentor.name"
+    hide-footer
+  >
     <RateYourExperienceForm></RateYourExperienceForm>
   </BModal>
 </template>
@@ -13,8 +17,8 @@ export default {
   props: {
     mentor: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
   components: {
     RateYourExperienceForm,

@@ -16,11 +16,21 @@
         </BCol>
       </BRow>
       <template #footer>
-
-        <BLink :to="getJitsiRoomUrl" @click="enter" class="float-end" v-if="!isMentorCreated">
+        <BLink
+          :to="getJitsiRoomUrl"
+          @click="enter"
+          class="float-end"
+          v-if="!isMentorCreated"
+        >
           Enter Room
         </BLink>
-        <SubscribeToRoom :roomId="roomID" :mentorId="mentorID" :room="room" v-if="isMentorCreated" class="float-end"></SubscribeToRoom>
+        <SubscribeToRoom
+          :roomId="roomID"
+          :mentorId="mentorID"
+          :room="room"
+          v-if="isMentorCreated"
+          class="float-end"
+        ></SubscribeToRoom>
       </template>
     </BCard>
   </div>
@@ -59,33 +69,36 @@ export default {
     },
     isMentorCreated: {
       required: false,
-      default: false
+      default: false,
     },
   },
   data() {
     return {
-      user: {}
-    }
+      user: {},
+    };
   },
   mounted() {
     const ref = firebase.database().ref("users"); // eslint-disable-line
     const _self = this;
-    ref.child(this.mentorID).get().then((snapshot) => {
-      _self.user = snapshot.val()
-    })
+    ref
+      .child(this.mentorID)
+      .get()
+      .then((snapshot) => {
+        _self.user = snapshot.val();
+      });
   },
   computed: {
-    ...mapGetters('User', ['getCurrentUser']),
+    ...mapGetters("User", ["getCurrentUser"]),
     getJitsiRoomUrl() {
       return `room/${this.roomID}`;
     },
   },
   methods: {
-    ...mapActions('Mentors', ['updateCurrentMentor']),
-    ...mapActions('User', ['getUser']),
+    ...mapActions("Mentors", ["updateCurrentMentor"]),
+    ...mapActions("User", ["getUser"]),
     enter() {
-       this.updateCurrentMentor(this.mentorID);
-    }
+      this.updateCurrentMentor(this.mentorID);
+    },
   },
   components: {
     SubscribeToRoom,
