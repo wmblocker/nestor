@@ -42,7 +42,7 @@
     <BRow class="mt-4">
       <BCol md="12">
         <div>
-          <b-card title="Mentor Stats">
+          <b-card title="Mentor Stats" v-if="getCurrentUser.mentor">
             <b-list-group>
               <b-list-group-item v-if="getRoomsByMentorId[getCurrentUser.id]"
                 >You have created

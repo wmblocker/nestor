@@ -1,6 +1,7 @@
 <template>
   <BCard :title="user.name" :img-src="getUserAvatar" img-alt="Avatar" img-top>
     <BCardText> {{ user.jobTitle }} </BCardText>
+    <BCardText><BButton variant="link">Follow</BButton></BCardText>
     <template #footer>
       <slot><small class="text-muted">Last online 3 mins ago</small></slot>
     </template>
