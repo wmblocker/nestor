@@ -39,6 +39,7 @@ const actions = {
         const timestamp = firebase.firestore.Timestamp.now();
         firebase.database().ref('rooms/' + id + '/' + roomID).set({
             name: form.name,
+            roomId: roomID,
             description: form.description,
             detailedDescription: form.detailedDescription,
             userId: id,

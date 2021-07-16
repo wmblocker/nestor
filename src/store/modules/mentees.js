@@ -27,7 +27,13 @@ const getters = {
      * @param userId - ID of the user
      * @returns mentee
      */
-    getMenteeById: state => userId => state.mentees[userId]
+    getMenteeById: state => userId => state.mentees[userId],
+    /**
+     * Get all rooms mentee is subscribed to
+     * @param userId - ID of the user
+     * @returns mentee rooms
+     */
+    getMenteeRoomsById: state => userId => state.mentees[userId]
 };
 const actions = {
     /**
@@ -110,6 +116,7 @@ const actions = {
         const { id } = rootState.User.user;
         firebase.database().ref('mentees/' + id + '/' + payload.roomId).set({
             roomId: payload.roomId,
+            mentorId: payload.mentorId,
             active: true,
             created: timestamp,
             updated: timestamp

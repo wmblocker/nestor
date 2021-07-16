@@ -23,7 +23,7 @@
             alt="Connections"
             class="d-none d-lg-block"
           ></BIcon>
-          <span class="d-block d-md-none">Connections</span>
+          <span class="d-block d-lg-none">Connections</span>
         </router-link>
         <router-link to="/portal/messages" class="mx-lg-5 nav-link">
           <BIcon
@@ -32,22 +32,22 @@
             alt="Messages"
             class="d-none d-lg-block"
           ></BIcon>
-          <span class="d-block d-md-none">Messages</span>
+          <span class="d-block d-lg-none">Messages</span>
         </router-link>
         <router-link to="/portal/rooms" class="mx-lg-5 nav-link">
-          <span class="d-block d-md-none">Rooms</span>
+          <span class="d-block d-lg-none">Rooms</span>
         </router-link>
         <router-link to="/portal/mentors" class="mx-lg-5 nav-link">
-          <span class="d-block d-md-none">Mentors</span>
+          <span class="d-block d-lg-none">Mentors</span>
         </router-link>
         <router-link to="/portal/profile" class="mx-lg-5 nav-link">
-          <span class="d-block d-md-none">My Profile</span>
+          <span class="d-block d-lg-none">My Profile</span>
         </router-link>
       </BNavbarNav>
       <BNavbarNav right>
-        <BNavItem v-if="getCurrentUser.name">{{
-          getCurrentUser.name
-        }}</BNavItem>
+          <router-link to="/" class="mx-lg-5 nav-link">
+              <span>Logout</span>
+          </router-link>
       </BNavbarNav>
     </BCollapse>
   </BNavbar>
@@ -58,7 +58,6 @@ import { mapGetters } from "vuex";
 import {
   BIcon,
   BNavbar,
-  BNavItem,
   BNavbarBrand,
   BNavbarToggle,
   BCollapse,
@@ -77,7 +76,6 @@ export default {
     BNavbarToggle,
     BCollapse,
     BNavbarNav,
-    BNavItem,
   },
 };
 </script>

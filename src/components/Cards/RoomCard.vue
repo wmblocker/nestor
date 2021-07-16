@@ -64,9 +64,6 @@ export default {
       type: Object,
       required: true,
     },
-    mentor: {
-      required: true,
-    },
     isMentorCreated: {
       required: false,
       default: false,

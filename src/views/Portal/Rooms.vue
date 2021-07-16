@@ -11,6 +11,7 @@
       <UserCreatedRoomsCardGroup class="mt-5" v-if="getCurrentUser.mentor"
         >Your Rooms</UserCreatedRoomsCardGroup
       >
+      <UserSubscribedRooms></UserSubscribedRooms>
       <MentorCreatedRoomsCardGroup class="mt-5"></MentorCreatedRoomsCardGroup>
     </div>
   </div>
@@ -21,6 +22,7 @@ import UserCreatedRoomsCardGroup from "../../components/CardGroups/UserCreatedRo
 import MentorCreatedRoomsCardGroup from "../../components/CardGroups/MentorCreatedRoomsCardGroup";
 import CreateRoomButton from "../../components/Buttons/CreateRoomButton";
 import { mapGetters } from "vuex";
+import UserSubscribedRooms from "../../components/CardGroups/UserSubscribedRooms";
 
 export default {
   name: "Rooms",
@@ -28,6 +30,7 @@ export default {
     ...mapGetters("User", ["getCurrentUser"]),
   },
   components: {
+    UserSubscribedRooms,
     CreateRoomButton,
     MentorCreatedRoomsCardGroup,
     UserCreatedRoomsCardGroup,
