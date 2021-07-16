@@ -94,7 +94,7 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  if (!store.state.user && to.name !== 'home') {
+  if (!store.state.user && from.name !== 'home' ) {
     const sessionUserId = sessionStorage.getItem("userId");
     if (sessionUserId) {
       store.dispatch("User/loginUserWithId", sessionUserId);
