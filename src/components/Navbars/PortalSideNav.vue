@@ -24,15 +24,33 @@
           Mentors</span
         >
       </router-link>
+      <router-link
+        to="/portal/mentees"
+        class="nav-link"
+        v-if="getCurrentUser.mentor"
+      >
+        <span
+          ><BIcon
+            icon="person-plus"
+            scale="1.5"
+            shift-h="-8"
+            alt="Mentees"
+          ></BIcon>
+          Mentees</span
+        >
+      </router-link>
     </BNav>
   </div>
 </template>
 
 <script>
 import { BNav, BIcon } from "bootstrap-vue";
-
+import { mapGetters } from "vuex";
 export default {
   name: "PortalSideNav",
+  computed: {
+    ...mapGetters("User", ["getCurrentUser"]),
+  },
   components: {
     BNav,
     BIcon,

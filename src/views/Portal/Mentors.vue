@@ -1,7 +1,6 @@
 <template>
   <div class="mentors">
     <h2>Mentors</h2>
-
     <RecommendedMentorsCardGroup></RecommendedMentorsCardGroup>
   </div>
 </template>

@@ -40,6 +40,13 @@
         <router-link to="/portal/mentors" class="mx-lg-5 nav-link">
           <span class="d-block d-lg-none">Mentors</span>
         </router-link>
+        <router-link
+          to="/portal/mentees"
+          class="mx-lg-5 nav-link"
+          v-if="getCurrentUser.mentor"
+        >
+          <span class="d-block d-lg-none">Mentees</span>
+        </router-link>
         <router-link to="/portal/profile" class="mx-lg-5 nav-link">
           <span class="d-block d-lg-none">My Profile</span>
         </router-link>

@@ -79,8 +79,12 @@ const actions = {
             state: '',
             city: ''
         }, (error) => {
-            if(error) {
-                console.error(error);
+            if(!error) {
+                if(mentor) {
+                    dispatch('Mentors/createMentor', userId, {root: true})
+                } else {
+                    dispatch('Mentees/createMentee', userId, {root: true})
+                }
             }
         });
     }

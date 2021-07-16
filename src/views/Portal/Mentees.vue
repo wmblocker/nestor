@@ -1,17 +1,16 @@
 <template>
   <div class="mentors">
-    <h2>Mentors</h2>
-
-    <RecommendedMentorsCardGroup></RecommendedMentorsCardGroup>
+    <h2>Mentees</h2>
+    <RecommendedMenteesCardGroup></RecommendedMenteesCardGroup>
   </div>
 </template>
 
 <script>
-import RecommendedMentorsCardGroup from "../../components/CardGroups/RecommendedMentorsCardGroup";
+import RecommendedMenteesCardGroup from "../../components/CardGroups/RecommendedMenteesCardGroup";
 
 export default {
   name: "Mentors",
-  components: { RecommendedMentorsCardGroup },
+  components: { RecommendedMenteesCardGroup },
 };
 </script>
 

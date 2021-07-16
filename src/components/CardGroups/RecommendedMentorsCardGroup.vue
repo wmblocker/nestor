@@ -3,7 +3,7 @@
     <slot>Mentors Recommended For You</slot>
     <BRow class="mt-3">
       <template v-for="(mentor, mentorId) in getMentors">
-        <BCol cols="6" v-if="mentorId !== getCurrentUser.id" :key="mentorId">
+        <BCol md="4" v-if="mentorId !== getCurrentUser.id" :key="mentorId">
           <UserCard :userId="mentorId" :mentor="mentor"></UserCard>
         </BCol>
       </template>

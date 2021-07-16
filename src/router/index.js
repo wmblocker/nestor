@@ -82,6 +82,14 @@ const routes = [
             /* webpackChunkName: "mentors" */ "../views/Portal/Mentors.vue"
           ),
       },
+      {
+        path: "mentees",
+        name: "mentees",
+        component: () =>
+          import(
+            /* webpackChunkName: "mentors" */ "../views/Portal/Mentees.vue"
+          ),
+      },
     ],
   },
 ];
