@@ -16,21 +16,22 @@
         </BCol>
       </BRow>
       <template #footer>
-        <router-link :to="getJitsiRoomUrl" class="float-end">
+        <BLink :to="getJitsiRoomUrl" @click="enter" class="float-end">
           <slot>Enter Room</slot>
-        </router-link>
+        </BLink>
       </template>
     </BCard>
   </div>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 import {
   BCard,
   BCol,
   BRow,
   BCardImg,
+  BLink,
   BCardText,
   BCardBody,
 } from "bootstrap-vue";
@@ -55,15 +56,22 @@ export default {
     },
   },
   computed: {
-    ...mapGetters("User", ["getCurrentUser"]),
+    ...mapGetters('User', ['getCurrentUser', 'getUser']),
     getJitsiRoomUrl() {
       return `room/${this.roomID}`;
     },
+  },
+  methods: {
+    ...mapActions('Mentors', ['updateCurrentMentor']),
+    enter() {
+       this.updateCurrentMentor(this.mentorID);
+    }
   },
   components: {
     BCard,
     BCol,
     BRow,
+    BLink,
     BCardImg,
     BCardText,
     BCardBody,

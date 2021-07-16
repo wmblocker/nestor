@@ -8,9 +8,9 @@ const mutations = {
     setRooms: (state, rooms) => state.rooms = rooms
 };
 const getters = {
-    getRooms: (state) => state.rooms,
-    getRoomById: (state) => (roomId, mentorId) => state.rooms[mentorId][roomId],
-    getRoomsByMentorId: (state) => (mentorId) => state.rooms[mentorId]
+    getRooms: state => state.rooms,
+    getRoomById: state => (roomId, mentorId) => state.rooms[mentorId][roomId],
+    getRoomsByMentorId: state => (mentorId) => state.rooms[mentorId]
 };
 const actions = {
     /**

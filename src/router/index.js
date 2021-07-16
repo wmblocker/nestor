@@ -73,7 +73,7 @@ const routes = [
         component: () =>
           import(
             /* webpackChunkName: "rooms" */ "../views/Portal/JitsiRoom.vue"
-          ),
+          )
       },
       {
         path: "mentors",
