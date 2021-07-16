@@ -38,8 +38,16 @@
         <div>
           <b-card title="Mentor Stats">
             <b-list-group>
-              <b-list-group-item>You have created {{Object.keys(getRooms[getCurrentUser.id]).length}} rooms</b-list-group-item>
-              <b-list-group-item>Mentees have given you {{getMentors[getCurrentUser.id].rating}} thumbs up</b-list-group-item>
+              <b-list-group-item v-if="getRoomsByMentorId[getCurrentUser.id]"
+                >You have created
+                {{ Object.keys(getRoomsByMentorId[getCurrentUser.id]).length }}
+                rooms</b-list-group-item
+              >
+              <b-list-group-item v-if="getMentors[getCurrentUser.id]"
+                >Mentees have given you
+                {{ getMentors[getCurrentUser.id].rating }} thumbs
+                up</b-list-group-item
+              >
             </b-list-group>
           </b-card>
         </div>
@@ -50,8 +58,12 @@
         <div>
           <b-card title="Mentee Stats">
             <b-list-group>
-              <b-list-group-item>You currently have 4 Mentors</b-list-group-item>
-              <b-list-group-item>You are subscribed to 7 rooms</b-list-group-item>
+              <b-list-group-item
+                >You currently have 4 Mentors</b-list-group-item
+              >
+              <b-list-group-item
+                >You are subscribed to 7 rooms</b-list-group-item
+              >
             </b-list-group>
           </b-card>
         </div>
@@ -103,7 +115,7 @@ export default {
   computed: {
     ...mapGetters("User", ["getCurrentUser"]),
     ...mapGetters("Mentors", ["getMentors"]),
-    ...mapGetters("Rooms", ["getRooms"]),
+    ...mapGetters("Rooms", ["getRoomsByMentorId"]),
   },
   components: {
     EditProfileButton,
@@ -112,8 +124,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  img {
-    max-width: 200px;
-    border-radius: 50% !important;
-  }
+img {
+  max-width: 200px;
+  border-radius: 50% !important;
+}
 </style>

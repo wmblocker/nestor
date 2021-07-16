@@ -17,6 +17,10 @@ Vue.use(IconsPlugin);
 
 Vue.config.productionTip = false;
 
+//Show dev tools in prod
+Vue.config.devtools = true;
+
+
 //Wait for Event and mount app
 document.addEventListener("DOMContentLoaded", function () {
   new Vue({

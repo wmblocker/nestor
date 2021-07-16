@@ -3,8 +3,8 @@
     <template v-if="joined">
       <div id="jitsi-iframe"></div>
       <b-row class="mt-5">
-        <b-col md="12" >
-          <p>{{getDetailedDescription}}</p>
+        <b-col md="12">
+          <p>{{ getDetailedDescription }}</p>
         </b-col>
       </b-row>
     </template>
@@ -23,7 +23,7 @@ import RateYourExperienceModal from "../Modals/RateYourExperienceModal";
 
 export default {
   name: "JitsiIframe",
-  components: {RateYourExperienceModal},
+  components: { RateYourExperienceModal },
   data() {
     return {
       api: null,
@@ -51,7 +51,7 @@ export default {
       api.addListener("readyToClose", () => {
         api.dispose();
         _self.joined = false;
-        _self.$bvModal.show('rateYourExperienceModal');
+        _self.$bvModal.show("rateYourExperienceModal");
       });
 
       this.api = api;
@@ -62,8 +62,9 @@ export default {
     ...mapGetters("Rooms", ["getRoomById"]),
     ...mapGetters("Mentors", ["getMentor"]),
     getDetailedDescription() {
-      return this.getRoomById(this.$route.params.roomID, this.getCurrentUser.id).detailedDescription
-    }
+      return this.getRoomById(this.$route.params.roomID, this.getCurrentUser.id)
+        .detailedDescription;
+    },
   },
   methods: {},
 };

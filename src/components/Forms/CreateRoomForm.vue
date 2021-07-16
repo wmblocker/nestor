@@ -29,13 +29,17 @@
           required
         ></BFormInput>
       </BFormGroup>
-      <BFormGroup id="input-group-3" label="Detailed Description" label-for="input-3">
+      <BFormGroup
+        id="input-group-3"
+        label="Detailed Description"
+        label-for="input-3"
+      >
         <b-form-textarea
-                id="textarea"
-                v-model="form.detailedDescription"
-                placeholder=""
-                rows="3"
-                max-rows="6"
+          id="textarea"
+          v-model="form.detailedDescription"
+          placeholder=""
+          rows="3"
+          max-rows="6"
         ></b-form-textarea>
       </BFormGroup>
       <BButton type="submit" variant="primary">Submit</BButton>
