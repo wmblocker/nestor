@@ -7,13 +7,14 @@
           <BCol
             cols="6"
             v-for="(room, roomID) in getRoomsByMentorId(mentorId)"
-            :key="room.updated + mentor.updated"
+            :key="room.name + mentor.updated"
           >
             <RoomCard
               :room="room"
               :roomID="roomID"
               :mentor="mentor"
               :mentorID="mentorId"
+              isMentorCreated="true"
               >Subscribe</RoomCard
             >
           </BCol>

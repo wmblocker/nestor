@@ -14,9 +14,9 @@
       <BCol md="12">
         <b-card
           img-alt="Card image"
-          img-src="https://placekitten.com/300/300"
+          :img-src="getCurrentUser.avatar || 'https://placekitten.com/300/300'"
           img-left
-          class="mb-3"
+          class="mb-3 p-3"
         >
           <b-card-text>
             {{ getCurrentUser.name }} ({{ getCurrentUser.displayName }})
@@ -25,9 +25,36 @@
             {{ getCurrentUser.email }}
           </b-card-text>
           <b-card-text>
-            {{ getCurrentUser.city }} {{ getCurrentUser.state }}
+            {{ getCurrentUser.city }}, {{ getCurrentUser.state }}
+          </b-card-text>
+          <b-card-text>
+            Years of Experience: {{ getCurrentUser.experience }}
           </b-card-text>
         </b-card>
+      </BCol>
+    </BRow>
+    <BRow class="mt-4">
+      <BCol md="12">
+        <div>
+          <b-card title="Mentor Stats">
+            <b-list-group>
+              <b-list-group-item>You have created {{Object.keys(getRooms[getCurrentUser.id]).length}} rooms</b-list-group-item>
+              <b-list-group-item>Mentees have given you {{getMentors[getCurrentUser.id].rating}} thumbs up</b-list-group-item>
+            </b-list-group>
+          </b-card>
+        </div>
+      </BCol>
+    </BRow>
+    <BRow class="mt-4">
+      <BCol md="12">
+        <div>
+          <b-card title="Mentee Stats">
+            <b-list-group>
+              <b-list-group-item>You currently have 4 Mentors</b-list-group-item>
+              <b-list-group-item>You are subscribed to 7 rooms</b-list-group-item>
+            </b-list-group>
+          </b-card>
+        </div>
       </BCol>
     </BRow>
     <BRow class="mt-4">
@@ -75,6 +102,8 @@ export default {
   name: "Profile",
   computed: {
     ...mapGetters("User", ["getCurrentUser"]),
+    ...mapGetters("Mentors", ["getMentors"]),
+    ...mapGetters("Rooms", ["getRooms"]),
   },
   components: {
     EditProfileButton,
@@ -82,4 +111,9 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped lang="scss">
+  img {
+    max-width: 200px;
+    border-radius: 50% !important;
+  }
+</style>

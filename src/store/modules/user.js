@@ -12,6 +12,14 @@ const getters = {
     getCurrentUser: (state) => state.user
 };
 const actions = {
+    getUser({commit, dispatch}, id) {
+        let user = {};
+        const ref = firebase.database().ref("users");
+        ref.child(id).get().then((snapshot) => {
+             user = snapshot.val()
+        })
+        return user;
+    },
     loginUser({commit, dispatch}, { email }) {
         const userId = email.substring(0, email.indexOf("@"));
         const ref = firebase.database().ref("users");

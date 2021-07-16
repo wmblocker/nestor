@@ -11,29 +11,33 @@
         </BCol>
         <BCol md="6">
           <BCardBody :title="room.description">
-            <BCardText>By {{ getCurrentUser.name }}</BCardText>
+            <BCardText>By {{ user.name }}</BCardText>
           </BCardBody>
         </BCol>
       </BRow>
       <template #footer>
-        <router-link :to="getJitsiRoomUrl" class="float-end">
-          <slot>Enter Room</slot>
-        </router-link>
+
+        <BLink :to="getJitsiRoomUrl" @click="enter" class="float-end" v-if="!isMentorCreated">
+          Enter Room
+        </BLink>
+        <SubscribeToRoom :roomId="roomID" :mentorId="mentorID" :room="room" v-if="isMentorCreated" class="float-end"></SubscribeToRoom>
       </template>
     </BCard>
   </div>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 import {
   BCard,
   BCol,
   BRow,
   BCardImg,
+  BLink,
   BCardText,
   BCardBody,
 } from "bootstrap-vue";
+import SubscribeToRoom from "../Buttons/SubscribeToRoomButton";
 
 export default {
   name: "RoomCard",
@@ -53,17 +57,42 @@ export default {
     mentor: {
       required: true,
     },
+    isMentorCreated: {
+      required: false,
+      default: false
+    },
+  },
+  data() {
+    return {
+      user: {}
+    }
+  },
+  mounted() {
+    const ref = firebase.database().ref("users"); // eslint-disable-line
+    const _self = this;
+    ref.child(this.mentorID).get().then((snapshot) => {
+      _self.user = snapshot.val()
+    })
   },
   computed: {
-    ...mapGetters("User", ["getCurrentUser"]),
+    ...mapGetters('User', ['getCurrentUser']),
     getJitsiRoomUrl() {
       return `room/${this.roomID}`;
     },
   },
+  methods: {
+    ...mapActions('Mentors', ['updateCurrentMentor']),
+    ...mapActions('User', ['getUser']),
+    enter() {
+       this.updateCurrentMentor(this.mentorID);
+    }
+  },
   components: {
+    SubscribeToRoom,
     BCard,
     BCol,
     BRow,
+    BLink,
     BCardImg,
     BCardText,
     BCardBody,

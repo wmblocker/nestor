@@ -8,9 +8,9 @@ const mutations = {
     setRooms: (state, rooms) => state.rooms = rooms
 };
 const getters = {
-    getRooms: (state) => state.rooms,
-    getRoomById: (state) => (roomId, mentorId) => state.rooms[mentorId][roomId],
-    getRoomsByMentorId: (state) => (mentorId) => state.rooms[mentorId]
+    getRooms: state => state.rooms,
+    getRoomById: state => (roomId, mentorId) => state.rooms[mentorId][roomId],
+    getRoomsByMentorId: state => (mentorId) => state.rooms[mentorId]
 };
 const actions = {
     /**
@@ -46,6 +46,16 @@ const actions = {
             }
         }).catch((error) => {
             console.error(error);
+        });
+    },
+    updateRoom({commit, state, dispatch}, payload){
+        const ref = firebase.database().ref("rooms/" + payload.mentorId + '/' + payload.roomId );
+        ref.update({
+            ...payload
+        }, (error) => {
+            if(!error) {
+                dispatch('updateRooms')
+            }
         });
     },
 };
