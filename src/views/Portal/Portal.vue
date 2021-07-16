@@ -27,10 +27,12 @@ export default {
   mounted() {
     this.updateRooms();
     this.updateMentors();
+    this.updateMentees();
   },
   methods: {
     ...mapActions("Rooms", ["updateRooms"]),
     ...mapActions("Mentors", ["updateMentors"]),
+    ...mapActions("Mentees", ["updateMentees"]),
   },
   components: {
     EditProfileModal,

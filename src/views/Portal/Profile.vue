@@ -25,7 +25,7 @@
             {{ getCurrentUser.email }}
           </b-card-text>
           <b-card-text>
-            {{ getCurrentUser.city }} {{ getCurrentUser.state }}
+            {{ getCurrentUser.city }}, {{ getCurrentUser.state }}
           </b-card-text>
           <b-card-text>
             Years of Experience: {{ getCurrentUser.experience }}

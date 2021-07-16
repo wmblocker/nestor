@@ -48,6 +48,16 @@ const actions = {
             console.error(error);
         });
     },
+    updateRoom({commit, state, dispatch}, payload){
+        const ref = firebase.database().ref("rooms/" + payload.mentorId + '/' + payload.roomId );
+        ref.update({
+            ...payload
+        }, (error) => {
+            if(!error) {
+                dispatch('updateRooms')
+            }
+        });
+    },
 };
 
 export default {
