@@ -99,7 +99,7 @@ router.beforeEach((to, from, next) => {
     if (sessionUserId) store.dispatch("User/loginUserWithId", sessionUserId);
     next();
   } else {
-    next();
+    next('/');
   }
 });
 
