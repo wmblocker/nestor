@@ -29,10 +29,20 @@ const actions = {
                         commit('setUser', snapshot.val());
                     })
                 }
+                sessionStorage.setItem("userId", userId);
             });
     },
+    loginUserWithId({commit, dispatch}, userId) {
+        if(userId) {
+            const ref = firebase.database().ref("users");
+            ref.child(userId).get().then((snapshot) => {
+                commit('setUser', snapshot.val());
+            })
+        } else {
+            console.error('Login failed');
+        }
+    },
     createUser({dispatch}, {userId, email}) {
-        console.log(email)
         firebase.database().ref('users/' + userId).set({
             id: userId,
             email: email,
@@ -45,6 +55,10 @@ const actions = {
             description: '',
             state: '',
             city: ''
+        }, () => {
+            if(error) {
+                console.error(error);
+            }
         });
     }
 };
