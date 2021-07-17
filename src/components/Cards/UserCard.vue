@@ -3,7 +3,11 @@
     <BCardText> {{ user.jobTitle }} </BCardText>
     <BCardText><BButton variant="link">Follow</BButton></BCardText>
     <template #footer>
-      <slot><small class="text-muted">Last online 3 mins ago</small></slot>
+      <slot
+        ><small class="text-muted"
+          >Last online {{ Math.floor(Math.random() * 20) }} mins ago</small
+        ></slot
+      >
     </template>
   </BCard>
 </template>

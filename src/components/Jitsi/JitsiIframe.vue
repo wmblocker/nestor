@@ -3,7 +3,7 @@
     <template v-if="joined">
       <div id="jitsi-iframe"></div>
       <b-row class="mt-5">
-        <b-col md="12"> </b-col>
+        <b-col md="12"></b-col>
       </b-row>
     </template>
     <b-row v-if="!joined" class="mt-5">

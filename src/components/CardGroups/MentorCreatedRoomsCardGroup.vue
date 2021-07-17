@@ -8,6 +8,7 @@
             cols="6"
             v-for="(room, roomID) in getRoomsByMentorId(mentorId)"
             :key="room.name + mentor.updated"
+            class="mt-3"
           >
             <RoomCard
               :room="room"

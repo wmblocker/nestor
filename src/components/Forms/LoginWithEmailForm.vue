@@ -30,31 +30,13 @@
           required
         ></BFormInput>
       </BFormGroup>
-      <BFormGroup
-        id="input-group-3"
-        label="Are you a mentor?"
-        label-for="input-3"
-      >
-        <BFormCheckbox
-          id="input-3"
-          v-model="form.mentor"
-          type="checkbox"
-          required
-        ></BFormCheckbox>
-      </BFormGroup>
       <BButton type="submit" variant="primary">Submit</BButton>
     </BForm>
   </div>
 </template>
 
 <script>
-import {
-  BForm,
-  BFormInput,
-  BFormGroup,
-  BButton,
-  BFormCheckbox,
-} from "bootstrap-vue";
+import { BForm, BFormInput, BFormGroup, BButton } from "bootstrap-vue";
 import { mapActions } from "vuex";
 
 export default {
@@ -84,7 +66,6 @@ export default {
     BFormInput,
     BFormGroup,
     BButton,
-    BFormCheckbox,
   },
 };
 </script>

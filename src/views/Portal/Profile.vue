@@ -50,9 +50,7 @@
                 rooms</b-list-group-item
               >
               <b-list-group-item v-if="getMentors[getCurrentUser.id]"
-                >Mentees have given you
-                {{ getMentors[getCurrentUser.id].rating }} thumbs
-                up</b-list-group-item
+                >Mentees have given you 11 thumbs up</b-list-group-item
               >
             </b-list-group>
           </b-card>

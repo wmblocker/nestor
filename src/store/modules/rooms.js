@@ -43,6 +43,7 @@ const actions = {
             description: form.description,
             detailedDescription: form.detailedDescription,
             userId: id,
+            image: '',
             open: true,
             participants: {},
             created: timestamp,

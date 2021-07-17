@@ -4,9 +4,9 @@
       <BRow no-gutters>
         <BCol md="6">
           <BCardImg
-            src="https://picsum.photos/400/400/?image=20"
+            :src="getRoomImage"
             alt="Image"
-            class="rounded-0"
+            class="rounded-0 h-100"
           ></BCardImg>
         </BCol>
         <BCol md="6">
@@ -89,6 +89,9 @@ export default {
     getJitsiRoomUrl() {
       return `room/${this.roomID}`;
     },
+    getRoomImage() {
+      return this.room.image || "https://picsum.photos/400/400/?image=20";
+    },
   },
   methods: {
     ...mapActions("Mentors", ["updateCurrentMentor"]),
@@ -110,4 +113,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+img {
+  width: 200px;
+}
+</style>
