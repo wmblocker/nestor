@@ -36,7 +36,7 @@ export default {
       const api = new JitsiMeetExternalAPI("8x8.vc", { // eslint-disable-line
         roomName: `vpaas-magic-cookie-b34307fd6806488fa62b1f3631405801/${this.$route.params.roomID}`,
         parentNode: document.querySelector("#jitsi-iframe"),
-        jwt: window.JWT,
+        jwt: "eyJraWQiOiJ2cGFhcy1tYWdpYy1jb29raWUtYjM0MzA3ZmQ2ODA2NDg4ZmE2MmIxZjM2MzE0MDU4MDEvZWM4ODExLVNBTVBMRV9BUFAiLCJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJqaXRzaSIsImV4cCI6MTYyNjQ5NTc2NSwibmJmIjoxNjI2NDg4NTYwLCJpc3MiOiJjaGF0Iiwicm9vbSI6IioiLCJzdWIiOiJ2cGFhcy1tYWdpYy1jb29raWUtYjM0MzA3ZmQ2ODA2NDg4ZmE2MmIxZjM2MzE0MDU4MDEiLCJjb250ZXh0Ijp7ImZlYXR1cmVzIjp7ImxpdmVzdHJlYW1pbmciOnRydWUsIm91dGJvdW5kLWNhbGwiOnRydWUsInNpcC1vdXRib3VuZC1jYWxsIjpmYWxzZSwidHJhbnNjcmlwdGlvbiI6dHJ1ZSwicmVjb3JkaW5nIjp0cnVlfSwidXNlciI6eyJtb2RlcmF0b3IiOnRydWUsIm5hbWUiOiJibG9ja2VyLndpbGxpYW0zIiwiaWQiOiJnb29nbGUtb2F1dGgyfDExNDAwNTg0MDkwNDExMDcyNTE0OSIsImF2YXRhciI6IiIsImVtYWlsIjoiYmxvY2tlci53aWxsaWFtM0BnbWFpbC5jb20ifX19.fE-vA4Nk20MC2CY5wH4WTOnp3rhHRhsVOqYvaSf_4gP5nKLNpGvAGcJTGDbHh3dIumU-MenCJizQ05_rzqSX_RSCLwL9afb8Bj6J9VwVq2heDT84vAAB7UwwYCoUPyMQ6D_-X7qB30iYRVfmG6zJ3y_q7SwOtWmVW5Ew9ZCEJd0OaNnZl42kcFhZ7Cx6uqGWXHJd3K04wsiFDxaPE16Aup6AHquqvL5FC_Zlo_nPdJW1SWHcrATgcafd9KQ-12wAvB-o02BA9VWuJ1LORteAjuUKYx9MNFzEgxbJ5n-G4SoDnSwkejA8Q-5CuVMCtG_kkBTdgF2DjwM62wxSZcD_OA",
         userInfo: {
           email: this.getCurrentUser.email,
         },
