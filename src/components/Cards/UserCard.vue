@@ -1,5 +1,11 @@
 <template>
-  <BCard :title="user.name" :img-src="getUserAvatar" img-alt="Avatar" img-top>
+  <BCard
+    :title="user.name"
+    :img-src="getUserAvatar"
+    img-alt="Avatar"
+    img-top
+    class="mx-auto mx-md-0"
+  >
     <BCardText> {{ user.jobTitle }} </BCardText>
     <BCardText><BButton variant="link">Follow</BButton></BCardText>
     <template #footer>

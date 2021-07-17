@@ -1,7 +1,7 @@
 <template>
   <div class="user-subscribed-rooms">
     <slot>Rooms You are Subscribed To</slot>
-    <BRow>
+    <BRow class="mt-3">
       <template v-for="(room, roomId) in getMenteeRoomsById(getCurrentUser.id)">
         <BCol cols="6" :key="roomId">
           <RoomCard
